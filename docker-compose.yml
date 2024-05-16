@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://beautibly@password:5432/content_app
+    volumes:
+      - .:/app
+    command: bundle exec rails s
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: beautibly
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: content_app
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
