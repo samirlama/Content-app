@@ -1,15 +1,14 @@
-FROM ruby:3.0.1
+# Stage 1: Build dependencies
+FROM ruby:3.0-slim
+
+RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev nodejs
 
 WORKDIR /app
 
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler -v 2.2.15
 
-RUN bundle install
-
-COPY . .
+RUN bundle install --quiet
 
 EXPOSE 3000
 
-# Start Rails server
 CMD ["rails", "server", "-b", "0.0.0.0"]
