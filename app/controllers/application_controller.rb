@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
     JWT.encode(payload, Rails.application.credentials.secret_key_base)
   end
 
-  def authorized
+  def authenticate_request
     render json: { error: 'Unauthorized' }, status: :unauthorized unless logged_in?
   end
 

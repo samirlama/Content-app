@@ -13,7 +13,7 @@ Before you begin, ensure you have the following installed on your local machine:
 ## Getting Started
 
 ### Installation
-
+``````
 1. Clone the repository:
 
    ```bash
