@@ -1,24 +1,44 @@
-# README
+# Ruby on Rails Assessment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails project designed to demonstrate basic setup and usage.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Before you begin, ensure you have the following installed on your local machine:
 
-* System dependencies
+- Ruby 3.0.1
+- Rails 7
+- PostgreSQL database
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Installation
 
-* Database initialization
+1. Clone the repository:
 
-* How to run the test suite
+   ```bash
+   git clone git@github.com:samirlama/Content-app.git
+   cd repository
+   ```
+2. Install dependencies
+   ```bash
+   bundle install
+   ```
+3. Database creation and migration
+   ```bash
+    rails db:create
+    rails db:migrate
+   ```
+4. Start server
+   ``` bash
+   rails s
+   ``` 
+   
+### Note
+1. ALl secret keys are encrypted using master keys
+   View/Update it using
+ ```bash
+    EDITOR="nano" rails credentials:edit
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+or any editor of your preference

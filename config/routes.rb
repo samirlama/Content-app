@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
 
       scope :auth, defaults: { format: :json } do
-        post '/login', to: 'auth#login'
+        post '/signin', to: 'auth#login'
       end
 
       resources :contents, only: %i[index create destroy update]
